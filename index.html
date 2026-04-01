@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suvai - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left-section">
+        <div class="overlay">
+            <h1>Suvai</h1>
+            <p class="main-tagline">Taste That Feels Like Home.</p>
+            <p class="sub-tagline">Fresh, Healthy & Delivery With Care.</p>
+    </div class="delivery-container">
+        <img src="image/delivery.jpg" class="delivery-img">
+    </div>
+ 
+    <!-- RIGHT SIDE -->
+    <div class="right-section">
+        <div class="login-card">
+
+        <!-- LOGO IMAGE -->
+        <div class="logo-container">
+            <img src="image/logo.png" alt="Suvai Logo" class="logo-img">
+        </div>
+
+        <h2>Login</h2>
+
+            <input type="text" id="username" placeholder="Username / Email">
+            
+            <div class="password-field">
+                <input type="password" id="password" placeholder="Password">
+                <span onclick="togglePassword()">👁</span>
+            </div>
+
+            <button class="login-btn" onclick="login()">Login</button>
+
+            <p style="text-align:center; margin-top:10px;">
+               Don't have an account? 
+               <a href="signup.html">Sign Up</a>
+            </p>
+
+            
+            <div class="social-login">
+                
+               <button class="google-btn">
+                  <img src="image/google.png" alt="Google">
+                  Sign in with Google
+           </button>
+
+    <button class="facebook-btn">
+        <img src="image/facebook.png" alt="Facebook">
+        Sign in with Facebook
+    </button>
+</div>
+            <p id="message"></p>
+        </div>
+    </div>
+
+</div>
+
+<script src="login.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
