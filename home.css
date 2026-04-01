@@ -1,0 +1,634 @@
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #FDF6F0;
+}
+
+/* ========================================= */
+/* PERFECT GLASS NAVBAR (LOGO + MENU)        */
+/* ========================================= */
+
+.glass-navbar {
+    position: absolute; 
+    top: 30px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: max-content; 
+    min-width: 850px; /* Made slightly wider to fit the new image AND text! */
+    z-index: 100; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 40px; 
+    
+    padding: 10px 35px; 
+    border-radius: 100px; 
+    
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); 
+}
+
+/* 1. The Container holding the Logo Image + Text */
+.logo {
+    position: static; 
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    cursor: pointer;
+}
+
+/* 2. The Circular Image */
+.nav-logo-img {
+    width: 45px; 
+    height: 45px;      
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #FFD700; 
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); 
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+.nav-logo-img:hover {
+    transform: scale(1.1);
+}
+
+/* 3. The Glowing Text */
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px; 
+    font-weight: 800;
+    background: linear-gradient(to right, #FFD700, #FF8C00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; 
+    display: inline-block; 
+    margin: 0;
+}
+
+/* 4. THE FIX: The Horizontal Menu Row */
+.nav-menu {
+    display: flex !important;
+    flex-direction: row !important; /* This forces them side-by-side again! */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+    list-style: none !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-menu li {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px; 
+    font-weight: 500; 
+    letter-spacing: 0.5px; 
+    color: #ffffff; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.nav-menu li:hover {
+    background: rgba(255, 255, 255, 0.2); 
+    color: #FFD700; 
+    transform: translateY(-2px); 
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+.hero-glass {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+
+/* ========================================= */
+/* MEALS SECTION (HORIZONTAL & DARK POP)     */
+/* ========================================= */
+.meals-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1C1E26, #2B2D38); 
+    text-align: center;
+    width: 100%;
+    display: block;
+    
+    /* Makes all text in this section default to white */
+    color: #ffffff; 
+}
+
+/* THE HORIZONTAL ROW CONTAINER */
+.meals-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px; 
+    flex-wrap: wrap; 
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* PREMIUM MEAL CARD (already set as frosted, so text will pop) */
+.meal-card {
+    background: rgba(255, 252, 248, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 25px;
+    padding: 20px;
+    width: 220px; 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    position: relative; 
+    overflow: hidden; 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+    
+    /* Ensure clean white text for all internal text not specified */
+    color: #fff;
+}
+
+.meal-card img {
+    width: 100%;
+    height: 160px; 
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+}
+
+/* Typography for the meal name - updated with white glow pop */
+.meal-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #fff; /* clean white title */
+    margin: 10px 0;
+    transition: all 0.4s ease;
+    
+    /* Subtle white pop effect */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* Brief description style - updated with clean light text */
+.meal-card p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    color: #bbb; /* clean light grey-white description */
+    margin-top: 5px;
+}
+
+/* MEAL CARD HOVER EFFECTS 🔥 */
+.meal-card:hover {
+    transform: translateY(-12px) scale(1.02); 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); 
+    background: rgba(255, 252, 248, 0.55); 
+}
+
+/* Text color shift and orange glow on hover for titles */
+.meal-card:hover h3 {
+    color: #e67e22; /* keep the warm orange accent fromscreens */
+    text-shadow: 0 0 15px rgba(230, 126, 34, 0.4); /* soft orange glow */
+}
+
+.meal-card img:hover {
+    box-shadow: 0 0 20px rgba(230, 126, 34, 0.5); 
+}
+
+.meal-card::after {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, transparent, rgba(230, 126, 34, 0.3), transparent);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.meal-card:hover::after {
+    opacity: 1;
+    animation: traceLight 3s linear infinite;
+}
+
+
+/* ========================================= */
+/* PLANS SECTION (HORIZONTAL & FIXED & DARK POP) */
+/* ========================================= */
+.plans-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1C1E26, #2B2D38); 
+    text-align: center;
+    width: 100%;
+    display: block;
+    
+    /* Makes all text in this section default to white */
+    color: #ffffff; 
+}
+
+/* THE HORIZONTAL ROW CONTAINER - FIXED */
+.plans {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px; 
+    flex-wrap: wrap; 
+    margin: 0 auto;
+    max-width: 100%; 
+}
+
+/* PREMIUM PLAN CARD - FIXED SIZE */
+.plan-card {
+    box-sizing: border-box; 
+    width: 250px; 
+    background: rgba(255, 255, 255, 0.35); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 25px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); 
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); 
+    
+    /* Default light text color inside card */
+    color: #fff;
+}
+
+/* Improve Typography for Plan Name - updated with orange glow pop */
+.plan-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5em; 
+    color: #e67e22; /* Keep original accent yellow/orange, but make it glow */
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+    
+    /* Subtle orange glow pop */
+    text-shadow: 0 0 15px rgba(230, 126, 34, 0.5);
+}
+
+/* Plan Price typography - updated with clean white text pop */
+.plan-card .price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    color: #fff; /* clean white price */
+    margin-bottom: 20px;
+    
+    /* Subtle white pop effect */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; 
+}
+
+/* Feature List items - updated with clean light text for features */
+.plan-card ul li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    color: #bbb; /* clean light grey-white for features */
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 30px; 
+}
+
+.plan-card ul li::before {
+    content: '\2713'; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #e67e22; /* keep accent yellow/orange, and make it glow */
+    font-weight: 900;
+    font-size: 1.2em;
+    
+    /* Soft orange checkmark glow */
+    text-shadow: 0 0 10px rgba(230, 126, 34, 0.4);
+}
+
+/* Button style with ultra modern pop on dark background */
+.plan-card .chosen-plan {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #fff;
+    background: #e67e22; 
+    padding: 12px 20px;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    
+    /* Modern text pop effect for the button text itself */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+    
+    /* Subtle inner glow to make button surface pop against dark background */
+    box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.1), 
+        0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* PLAN CARD HOVER EFFECTS 🔥 */
+.plan-card:hover {
+    transform: translateY(-15px); 
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2); 
+    background: rgba(255, 255, 255, 0.45); 
+}
+
+.plan-card:hover h3 {
+    text-shadow: 0 0 20px rgba(230, 126, 34, 0.7); /* intensify orange glow on hover */
+}
+
+.plan-card:hover .price {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* intensify white glow on hover */
+}
+
+.plan-card .chosen-plan:hover {
+    transform: scale(1.05);
+    background: #d35400; 
+    animation: buttonPulse 1s ease infinite; 
+    
+    /* intensify text and inner glow on hover */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        inset 0 0 25px rgba(255, 255, 255, 0.2), 
+        0 10px 25px rgba(230, 126, 34, 0.2);
+}
+
+.plan-card::after {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.plan-card:hover::after {
+    opacity: 1;
+    animation: traceLightDeport 3s linear infinite;
+}
+
+/* ===== FLOATING FOOD ===== */
+.floating-food {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;   /* VERY IMPORTANT */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-food span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 28px;
+    animation: floatUp 10s linear infinite;
+    opacity: 0.8;
+}
+
+/* positions */
+.floating-food span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-food span:nth-child(2) { left: 30%; animation-delay: 2s; }
+.floating-food span:nth-child(3) { left: 60%; animation-delay: 4s; }
+.floating-food span:nth-child(4) { left: 80%; animation-delay: 1s; }
+
+/* animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* ========================================= */
+/* ABOUT SUVAI SECTION (STARTUP VIBE)        */
+/* ========================================= */
+.about-section {
+    padding: 80px 20px;
+    background: #ffffff; /* Crisp white to snap back from the dark section */
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #eee;
+}
+
+.about-container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Keeps it responsive for mobile */
+    align-items: center;
+    gap: 60px;
+    justify-content: space-between;
+}
+
+/* LEFT SIDE TEXT */
+.about-content {
+    flex: 1;
+    min-width: 350px;
+}
+
+.about-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    color: #1C1E26; /* Dark slate text */
+}
+
+/* Gives the Suvai name that signature glowing gradient */
+.about-title .highlight {
+    background: linear-gradient(to right, #FFD700, #FF8C00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-mission {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    border-left: 5px solid #FF8C00; /* Cool startup line accent */
+    padding-left: 18px;
+}
+
+.about-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05em;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* RIGHT SIDE STAT BOXES */
+.about-stats {
+    flex: 1;
+    min-width: 350px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.stat-box {
+    background: #fdfdfd;
+    padding: 30px 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    flex: 1;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(230, 126, 34, 0.15); /* Soft orange shadow */
+    border-color: rgba(230, 126, 34, 0.3);
+}
+
+.stat-box h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #e67e22; /* Signature orange */
+    margin: 0 0 5px 0;
+}
+
+.stat-box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #777;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================= */
+/* HERO TEXT & BUTTONS (STARTUP POP)         */
+/* ========================================= */
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5em; 
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+}
+
+.hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #f0f0f0; 
+    margin: 0 0 35px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap; /* Keeps buttons nice on mobile */
+}
+
+/* PRIMARY BUTTON (Orange Pop) */
+.btn-primary {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #FFD700, #FF8C00); 
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 50px; 
+    box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4); 
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(230, 126, 34, 0.6); 
+    color: #fff;
+}
+
+/* SECONDARY BUTTON (Ghost style) */
+.btn-secondary {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.1); 
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 50px;
+    border: 2px solid #ffffff; 
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: #ffffff; 
+    color: #FF8C00; 
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
