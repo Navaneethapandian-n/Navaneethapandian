@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Suvai</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+
+<div class="floating-food">
+    <span>🥬</span>
+    <span>🍗</span>
+    <span>🥗</span>
+    <span>🍛</span>
+</div>
+
+<!-- NAVBAR -->
+<nav class="glass-navbar">
+
+    <div class="logo">
+       <img src="logo.png" alt="Suvai Logo" class="nav-logo-img">
+    <span class="logo-text">Suvai</span>
+    </div>
+
+    <ul class="nav-menu">
+        <li>🏠 Dashboard</li>
+        <li>🍽 Meals</li>
+        <li>📦 Subscriptions</li>
+        <li>ℹ️ About</li>
+        <li>👤 Profile</li>
+    </ul>
+</nav>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-glass">
+        <h1 class="hero-title">Healthy Living, Made Effortless✨</h1>
+        <p class="hero-subtitle">Skip the cooking. Enjoy delicious, perfectly balanced meals delivered daily — designed for your lifestyle.</p>
+        
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary">Explore Plans</a>
+            <a href="#" class="btn-secondary">View Menu</a>
+        </div>
+    </div>
+</div>
+
+<!-- PLANS -->
+<section class="plans-section">
+
+    <h2>Choose Your Plan</h2>
+
+    <div class="plans">
+
+        <div class="plan-card">
+            <h3>Basic</h3>
+            <p>₹999 / month</p>
+            <ul>
+                <li>1 Meal / Day</li>
+                <li>Free Delivery</li>
+            </ul>
+        </div>
+
+        <div class="plan-card">
+            <h3>Pro</h3>
+            <p>₹1999 / month</p>
+            <ul>
+                <li>2 Meals / Day</li>
+                <li>Priority Delivery</li>
+            </ul>
+        </div>
+
+        <div class="plan-card highlight">
+            <h3>Premium</h3>
+            <p>₹2999 / month</p>
+            <ul>
+                <li>3 Meals / Day</li>
+                <li>Diet Customization</li>
+            </ul>
+        </div>
+
+        <!-- NEW ELITE PLAN -->
+        <div class="plan-card elite">
+            <h3>Elite 👑</h3>
+            <p>₹4999 / month</p>
+            <ul>
+                <li>Unlimited Meals</li>
+                <li>Personal Nutritionist</li>
+                <li>VIP Delivery</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- MEALS -->
+<section class="meals-section">
+    <h2>Popular Meals:</h2>
+
+    <div class="meals-container">
+
+       <div class="meal-card">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80">
+          <h3>Healthy Bowl</h3>
+    </div>
+
+    <div class="meal-card">
+       <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80">
+       <h3>Fresh Salad</h3>
+    </div>
+
+    <div class="meal-card">
+       <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=500&q=80">
+       <h3>South Indian Meal</h3>
+    </div>
+
+    <div class="meal-card">
+       <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=500&q=80">
+       <h3>Veg Delight</h3>
+    </div>
+
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="about-container">
+        
+        <div class="about-content">
+            <h2 class="about-title">About <span class="highlight">Suvai</span> 🍽️</h2>
+            <p class="about-mission">Our mission is to make healthy eating simple, affordable, and accessible.</p>
+            <p class="about-desc">Suvai is a premium food subscription platform that delivers fresh, nutritious, and delicious meals straight to your doorstep. We believe that eating well shouldn't be a chore, which is why our chefs and nutritionists do the heavy lifting for you.</p>
+        </div>
+
+        <div class="about-stats">
+            <div class="stat-box">
+                <h4>100%</h4>
+                <p>Fresh Food</p>
+            </div>
+            <div class="stat-box">
+                <h4>50+</h4>
+                <p>Curated Meals</p>
+            </div>
+            <div class="stat-box">
+                <h4>Daily</h4>
+                <p>Free Delivery</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+document.addEventListener("mousemove", function(e) {
+    const spices = document.querySelectorAll(".floating-food span");
+
+    spices.forEach((spice, index) => {
+        const speed = (index + 1) * 0.02;
+
+        const x = (window.innerWidth - e.pageX * speed) / 100;
+        const y = (window.innerHeight - e.pageY * speed) / 100;
+
+        spice.style.transform = translate(${x}px, ${y}px);
+    });
+});
+</script>
+
+<script>
+window.addEventListener("scroll", function() {
+    const scrollY = window.scrollY;
+    const spices = document.querySelectorAll(".floating-food span");
+
+    spices.forEach((spice, index) => {
+        const speed = (index + 1) * 0.3;
+        spice.style.top = ${scrollY * speed}px;
+    });
+});
+</script>
+</body>
+</html>
