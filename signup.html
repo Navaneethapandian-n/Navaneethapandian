@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suvai - Signup</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left-section">
+        <div class="overlay">
+            <h1>Suvai</h1>
+            <p class="main-tagline">Taste That Feels Like Home.</p>
+            <p class="sub-tagline">Fresh, Healthy & Delivery With Care.</p>
+        </div class="delivery-container">
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-section">
+        <div class="login-card">
+
+        <!-- LOGO IMAGE -->
+        <div class="logo-container">
+            <img src="image/logo.png" alt="Suvai Logo" class="logo-img">
+        </div>
+
+        <h2>Sign up</h2>
+
+            <input type="text" id="username" placeholder="Username">
+
+            <input type="email" id="email" placeholder="Email">
+
+            <div class="password-field">
+               <input type="password" id="password" placeholder="Password">
+               <span onclick="togglePassword()">👁</span>
+            </div>
+
+            <div class="password-field">
+              <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            </div>
+            <button class="login-btn" onclick="signup()">Sign Up</button>
+            
+            <p style="text-align:center; margin-top:10px;">
+               Already have an account? 
+               <a href="index.html">Login</a>
+            </p>
+           
+            <div class="social-login">
+                
+               <button class="google-btn">
+                  <img src="image/google.png" alt="Google">
+                  Sign in with Google
+           </button>
+
+    <button class="facebook-btn">
+        <img src="image/facebook.png" alt="Facebook">
+        Sign in with Facebook
+    </button>
+</div>
+            <p id="message"></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function signup() {
+
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    // 1. Check empty
+    if (username === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    // 2. Check password match
+    if (password !== confirmPassword) {
+        alert("Password does not match!");
+        return;
+    }
+
+    // 3. Save data
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    alert("Account created successfully!");
+    window.location.href="index.html";
+    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
